@@ -3,17 +3,22 @@
     <form @submit.prevent="mergeImageAndText">
       <div>
         <label for="imageInput">Choisir une image:</label>
-        <input type="file" id="imageInput" @change="handleImageUpload" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
+        <input type="file" id="imageInput" @change="handleImageUpload" accept="image/*" class="text-sm text-stone-500
+   file:mr-5 file:py-1 file:px-3 file:border-[1px]
+   file:text-xs file:font-medium
+   file:bg-stone-50 file:text-stone-700
+   hover:file:cursor-pointer hover:file:bg-blue-50
+   hover:file:text-blue-700" />
       </div>
       <div>
         <label for="textInput">Texte:</label>
-        <input type="text" id="textInput" v-model="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+        <input type="text" id="textInput" v-model="text" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" />
       </div>
-      <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="submit">Générer l'image</button>
+      <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">Générer l'image</button>
     </form>
     <div v-if="canvasVisible">
       <canvas ref="canvas" width="300" height="600"></canvas>
-      <button class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" @click="downloadImage">Télécharger l'image</button>
+      <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" @click="downloadImage">Télécharger l'image</button>
     </div>
   </div>
 </template>
