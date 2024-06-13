@@ -21,7 +21,7 @@
       <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">Générer l'image</button>
     </form>
     <div v-if="canvasVisible">
-      <canvas ref="canvas" width="300" height="600"></canvas>
+      <canvas ref="canvas" width="360" height="540"></canvas>
       <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" @click="downloadImage">Télécharger l'image</button>
     </div>
   </div>
@@ -36,7 +36,7 @@ export default {
       image: null,
       text: '',
       canvasVisible: false,
-      textColor: '#000000',
+      textColor: '#FF4A52',
     };
   },
   methods: {
@@ -99,6 +99,11 @@ export default {
             // Draw the text on the canvas
             ctx.font = '30px Arial';
             ctx.fillStyle = this.textColor;
+
+
+            const x = canvas.width / 2;
+
+
             ctx.fillText(this.text, 50, 50);
             ctx.fillText("soutient", 50, 150);
           };
@@ -113,7 +118,7 @@ export default {
     downloadImage() {
       const canvas = this.$refs.canvas;
       canvas.toBlob((blob) => {
-        saveAs(blob, 'image_with_text.png');
+        saveAs(blob, 'soutient_front_populaire.png');
       });
     },
   },
