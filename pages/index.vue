@@ -100,12 +100,12 @@ export default {
             ctx.font = '30px Arial';
             ctx.fillStyle = this.textColor;
 
+            const textWidth = ctx.measureText(this.text ).width;
 
-            const x = canvas.width / 2;
-
-
-            ctx.fillText(this.text, 50, 50);
-            ctx.fillText("soutient", 50, 150);
+            ctx.fillText(this.text, (canvas.width / 2) - (textWidth / 2), 50);
+            const soutient = "soutient";
+            const soutientWidth = ctx.measureText(soutient ).width;
+            ctx.fillText(soutient, (canvas.width / 2) - (soutientWidth / 2), 100);
           };
 
           if (this.image.complete) {
