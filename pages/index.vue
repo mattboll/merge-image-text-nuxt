@@ -114,7 +114,7 @@ export default {
 
 
             const logoFP = new Image();
-            logoFP.src = '/logo_fp.png';
+            logoFP.src = '/merge-image-text-nuxt/logo_fp.png';
             logoFP.onload = function () {
 
               const imgWidth = logoFP.width;
