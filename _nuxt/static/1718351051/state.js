@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Fmerge-image-text-nuxt\u002F_nuxt\u002Fstatic\u002F1718351051",layout:"default",error:a,serverRendered:true,routePath:"\u002F",config:{_app:{basePath:"\u002Fmerge-image-text-nuxt\u002F",assetsPath:"\u002Fmerge-image-text-nuxt\u002F_nuxt\u002F",cdnURL:a}}}}(null));
