@@ -106,6 +106,33 @@ export default {
             const soutient = "soutient";
             const soutientWidth = ctx.measureText(soutient ).width;
             ctx.fillText(soutient, (canvas.width / 2) - (soutientWidth / 2), 100);
+
+
+            const filterHeight = 150; // Hauteur du filtre
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // Couleur noire avec 50% de transparence
+            ctx.fillRect(0, canvas.height - filterHeight, canvas.width, filterHeight);
+
+
+            const logoFP = new Image();
+            logoFP.src = '/logo_fp.png';
+            logoFP.onload = function () {
+
+              const imgWidth = logoFP.width;
+            const imgHeight = logoFP.height;
+
+            // Calculer le ratio pour ne pas déformer l'image
+            const scale = Math.min((canvas.width - 100) / imgWidth, canvas.height / imgHeight);
+
+            const scaledWidth = imgWidth * scale;
+            const scaledHeight = imgHeight * scale;
+
+            // Calculer la position pour centrer l'image horizontalement et la placer en bas verticalement
+            const x = (canvas.width - scaledWidth) / 2;
+            const y = canvas.height - scaledHeight;
+
+            // Dessiner l'image
+            ctx.drawImage(logoFP, x, y - 25, scaledWidth, scaledHeight);
+            }
           };
 
           if (this.image.complete) {
